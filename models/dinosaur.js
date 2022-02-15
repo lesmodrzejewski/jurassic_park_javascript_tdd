@@ -5,9 +5,18 @@
 }
 
 
-// Dinosaur.prototype.find_dinosaur_that_attracts_most_visitors = function(dinosaurs){
-//   let array_of_number_of_visitors = [];
-// }
+Dinosaur.prototype.find_dinosaur_that_attracts_most_visitors = function(dinosaurs){
+  let dino_who_attracts_most_visitors;
+  let max_visits = 0
+
+  for (var dino of dinosaurs){
+    if(dino.guestsAttractedPerDay > max_visits) {
+      max_visits = dino.guestsAttractedPerDay;
+      dino_who_attracts_most_visitors = dino;
+    }
+  }
+  return dino_who_attracts_most_visitors;
+}
 
 
 Dinosaur.prototype.find_dinosaur_by_species = function(dinosaurs, species){
