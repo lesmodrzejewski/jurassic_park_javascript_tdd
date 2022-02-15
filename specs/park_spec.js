@@ -13,8 +13,8 @@ describe('Park', function() {
   beforeEach(function () {
     dinosaur1 = new Dinosaur('T-Rex', 'carnivore', 15000)
     dinosaur2 = new Dinosaur('Allosaurus', 'carnivore', 7000)
-    dinosaur3 = new Dinosaur('Stegosaurus', 'herbivorous', 12000)
-    dinosaur4 = new Dinosaur('Triceratops', 'herbivorous', 14000)
+    dinosaur3 = new Dinosaur('Stegosaurus', 'herbivore', 12000)
+    dinosaur4 = new Dinosaur('Triceratops', 'herbivore', 14000)
     park = new Park('Jurassic', 50, [dinosaur1, dinosaur2, dinosaur3]);
   })
 
@@ -69,6 +69,11 @@ describe('Park', function() {
   it('should be able to calculate total revenue for one year', function() {
     const actual = dinosaur1.calculate_total_revenue_per_year(park.collection_of_dinosaurs);
     assert.strictEqual(actual, 620500000)
+  });
+
+  it('should be able to remove dinosaurs of particular species', function() {
+    const actual = dinosaur1.remove_dinosaurs_of_particular_species(park.collection_of_dinosaurs, dinosaur3.species);
+    assert.deepStrictEqual(actual, [dinosaur1, dinosaur2])
   });
 
 });

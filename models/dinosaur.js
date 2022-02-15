@@ -1,4 +1,4 @@
-       const Dinosaur = function (species, diet, guestsAttractedPerDay) {
+const Dinosaur = function (species, diet, guestsAttractedPerDay) {
   this.species = species;
   this.diet = diet;
   this.guestsAttractedPerDay = guestsAttractedPerDay;
@@ -58,6 +58,16 @@ Dinosaur.prototype.calculate_total_revenue_per_year = function(dinosaurs) {
   }
 
   return total * 365 * 50
+}
+
+Dinosaur.prototype.remove_dinosaurs_of_particular_species = function(dinosaurs, species){
+  let new_list_of_dinosaurs_of_particular_species = []
+  for(var dino of dinosaurs) {
+    if (dino.species !== species) {
+      new_list_of_dinosaurs_of_particular_species.push(dino)
+    }
+  }
+  return new_list_of_dinosaurs_of_particular_species;
 }
 
 

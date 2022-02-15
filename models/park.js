@@ -14,7 +14,4 @@ Park.prototype.remove_dinosaur_from_collection = function() {
     this.collection_of_dinosaurs.pop()
 }
 
-
-
-
 module.exports = Park
